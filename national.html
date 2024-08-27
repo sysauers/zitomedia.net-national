@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+
+<style>
+ 
+    h1 {
+      background-color: #00193d;
+      color: white;
+      font-size: 48px;
+      text-align: center;
+    }
+    h2 {
+      color: white;
+      font-size: 32px;
+    }
+    h3 {
+      font-size: 28px;
+      color: #46bba4;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+    h4 {
+      font-size: 18px;
+      color: #00193d;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+    h5 {
+      font-size: 22px;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+    p {
+      background-color: #00193d;
+      color: #f5f5f5;
+      font-size: 20px;
+      text-align: center;
+    }
+    hr {
+      color: #f5f5f5;
+    }
+
+    body {
+      font-family: 'EB Garamond', serif;
+      background-color: #00193d;
+      color: #000000;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .service-areas-container {
+      background-color: #00193d;
+      padding: 5px;
+      text-align: center;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .service-areas-container select {
+      width: 100%;
+      max-width: 1400px;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 0px;
+      background-color: #f5f5f5;
+      color: #000000;
+      margin: 0;
+    }
+    .dropdown-box select option {
+      font-size: 16px;
+    }
+    .content {
+      padding: 0px;
+      background-color: #00193d;
+      color: #000000;
+    }
+    blockquote {
+      background: #00193d;
+      margin: 0 auto;
+      color: white;
+      border: solid;
+      border-radius: 0px;
+      text-align: center;
+      padding: 20px 20px;
+      line-height: 1.5em;
+      max-width: 1920px;
+    }
+    .dropdown-container {
+      display: flex;
+      justify-content: center; /* Center align the dropdowns */
+      gap: 30px; /* Padding between the dropdowns */
+      margin-top: 20px;
+      background-color: #00193d;
+      color: #46bba4;
+      border: solid;
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .dropdown-column {
+      width: 1000px; /* Set the width of each dropdown column */
+      background-color: #00193d;
+    }
+    .service-areas-container {
+      margin: 0;
+      background-color: #00588f;
+    }
+    select {
+      width: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .navbar {
+      background-color: #00193d !important;
+  font-size: 18px;
+    }
+    .navbar-brand, .nav-link, .form-control::placeholder {
+      color: #f5f5f5!important;
+    }
+    .nav-link:hover {
+      color: #ff0000!important;
+    }
+    .btn-outline-success {
+      color: #068625!important;
+      border-color: #068625!important;
+    }
+    .btn-outline-success:hover {
+      background-color: #46bba4!important;
+      border-color: #46bba4!important;
+    }
+   .dropdown-menu .dropdown-menu {
+      left: 100%;
+      top: 0;
+      margin-left: 0;
+      border-radius: 0.25rem;
+  }
+  </style>
+
+</head>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+ <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <!-- Dropdown Menu 1 -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Service States CA-IL
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">California (B-L)</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/california/borrego-springs">Borrego Springs</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/california/burney">Burney</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/california/calipatria">Calipatria</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/california/chester">Chester</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/california/clear-creek">Clear Creek</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/california/frazier-park">Frazier Park</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/california/hamilton-branch">Hamilton Branch</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/california/janesville">Janesville</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/california/julian">Julian</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/california/lake-almanor">Lake Almanor</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/california/lake-of-the-woods">Lake of the Woods</a></li>
+                  </ul>
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">California (L-W)</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/california/lebec">Lebec</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/california/mecca">Mecca</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/california/niland">Niland</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/california/north-shore">North Shore</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/california/pine-mountain-club">Pine Mountain Club</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/california/salton-city">Salton City</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/california/salton-sea-beach">Salton Sea Beach</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/california/susanville">Susanville</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/california/thermal">Thermal</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/california/westwood">Westwood</a></li>
+                  </ul>
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Colorado</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/colorado/bayfield">Bayfield</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/colorado/ignacio">Ignacio</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/colorado/pagosa-springs">Pagosa Springs</a></li>
+                  </ul>
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Florida</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/florida/ocala">Ocala</a></li>
+                  </ul>
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Georgia</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/georgia/bolingbroke">Bolingbroke</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/georgia/dublin">Dublin</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/georgia/eatonton">Eatonton</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/georgia/hancock-county">Hancock County</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/georgia/juliette">Juliette</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/georgia/macon">Macon</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/georgia/milledgeville">Milledgeville</a></li>
+                  </ul>
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Illinois</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/illinois/carbondale">Carbondale</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/illinois/carrier-mills">Carrier Mills</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/illinois/creal-springs">Creal Springs</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/illinois/goreville">Goreville</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/illinois/harrisburg">Harrisburg</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/illinois/jackson-county">Jackson County</a></li>
+                  </ul>
+                </ul>
+              </li>
+        
+              <!-- Dropdown Menu 2 -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Service States ID-MO
+                </a>
+        <ul class="dropdown-menu">
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Idaho</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/idaho/mountain-home">Mountain Home</a></li>
+                  </ul>
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Kansas</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/kansas/liberal">Liberal</a></li>
+                  </ul>
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Kentucky (A-H)</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/kentucky/arlington">Arlington</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/kentucky/barbourville">Barbourville</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/kentucky/bardwell">Bardwell</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/kentucky/barlow">Barlow</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/kentucky/clinton">Clinton</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/kentucky/eddyville">Eddyville</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/kentucky/fancy-farm">Fancy Farm</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/kentucky/grand-rivers">Grand Rivers</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/kentucky/hazel">Hazel</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/kentucky/hickman">Hickman</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/kentucky/hickory">Hickory</a></li>
+                  </ul>
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Kentucky (K-W)</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/kentucky/kuttawa">Kuttawa</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/kentucky/la-center">La Center</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/kentucky/mayfield">Mayfield</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/kentucky/rockholds">Rockholds</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/kentucky/sedalia">Sedalia</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/kentucky/siler">Siler</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/kentucky/symsonia">Symsonia</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/kentucky/wickliffe">Wickliffe</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/kentucky/williamsburg">Williamsburg</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/kentucky/wingo">Wingo</a></li>
+                  </ul>
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Louisiana</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/louisiana/fordoche">Fordoche</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/louisiana/livonia">Livonia</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/louisiana/lottie">Lottie</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/louisiana/maringouin">Maringouin</a></li>
+                  </ul>
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Minnesota</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/minnesota/aurora">Aurora</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/minnesota/babbitt">Babbitt</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/minnesota/beaver-bay">Beaver Bay</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/minnesota/brimson">Brimson</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/minnesota/duluth">Duluth</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/minnesota/ely">Ely</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/minnesota/embarrass">Embarrass</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/minnesota/finland">Finland</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/minnesota/hoyt-lakes">Hoyt Lakes</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/minnesota/isabella">Isabella</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/minnesota/knife-river">Knife River</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/minnesota/makinen">Makinen</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/minnesota/silver-bay">Silver Bay</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/minnesota/two-harbors">Two Harbors</a></li>
+                  </ul>
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Missouri</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/missouri/chillicothe">Chillicothe</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/missouri/marshall">Marshall</a></li>
+                  </ul>
+                </ul>
+              </li>
+        
+              <!-- Dropdown Menu 3 -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Service States NE-PA
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Nebraska (B-E)</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/bennet">Bennet</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/blue-springs">Blue Springs</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/bruning">Bruning</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/cass-county">Cass County</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/ceresco">Ceresco</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/clatonia">Clatonia</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/clay-center">Clay Center</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/cook">Cook</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/davenport">Davenport</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/de-witt">De Witt</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/deshler">Deshler</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/dorchester">Dorchester</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/eagle">Eagle</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/edgar">Edgar</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/elmwood">Elmwood</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/exeter">Exeter</a></li>
+                  </ul>
+        <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Nebraska (F-P)</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/fairfield">Fairfield</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/fairmont">Fairmont</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/friend">Friend</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/geneva">Geneva</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/hallam">Hallam</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/harvard">Harvard</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/hickman">Hickman</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/johnson">Johnson</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/malcolm">Malcolm</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/mccool-junction">McCool Junction</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/milford">Milford</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/milligan">Milligan</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/murray">Murray</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/palmyra">Palmyra</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/pleasantdale">Pleasantdale</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/plymouth">Plymouth</a></li>
+                  </ul>
+        <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Nebraska (S-W)</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/sutton">Sutton</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/syracuse">Syracuse</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/unadilla">Unadilla</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/utica">Utica</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/valparaiso">Valparaiso</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/waco">Waco</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/weeping-water">Weeping Water</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/wilber">Wilber</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nebraska/wymore">Wymore</a></li>
+                  </ul>
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Nevada</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nevada/elko">Elko</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/nevada/winnemucca">Winnemucca</a></li>
+                  </ul>
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">New York</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/new-york/genoa">Genoa</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/new-york/king-ferry">King Ferry</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/new-york/locke">Locke</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/new-york/moravia">Moravia</a></li>
+                  </ul>
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">North Carolina</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/north-carolina/bakersville">Bakersville</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/north-carolina/bryson-city">Bryson City</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/north-carolina/burnsville">Burnsville</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/north-carolina/canton">Canton</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/north-carolina/clyde">Clyde</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/north-carolina/green-mountain">Green Mountain</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/north-carolina/little-switzerland">Little Switzerland</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/north-carolina/marion">Marion</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/north-carolina/mars-hill">Mars Hill</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/north-carolina/micaville">Micaville</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/north-carolina/penland">Penland</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/north-carolina/robbinsville">Robbinsville</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/north-carolina/spruce-pine">Spruce Pine</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/north-carolina/waynesville">Waynesville</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/north-carolina/whittier">Whittier</a></li>
+                  </ul>
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Ohio</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/ohio/ashtabula">Ashtabula</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/ohio/chardon">Chardon</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/ohio/conneaut">Conneaut</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/ohio/denmark">Denmark</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/ohio/dorset">Dorset</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/ohio/geneva">Geneva</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/ohio/huntsburg">Huntsburg</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/ohio/kingsville">Kingsville</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/ohio/madison">Madison</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/ohio/montville">Montville</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/ohio/pierpont">Pierpont</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/ohio/roaming-shores">Roaming Shores</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/ohio/rock-creek">Rock Creek</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/ohio/rome">Rome</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/ohio/thompson">Thompson</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/ohio/windsor">Windsor</a></li>
+                  </ul>
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Pennsylvania (A-EL)</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/alba">Alba</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/austin">Austin</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/bellefonte">Bellefonte</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/belleville">Belleville</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/brockway">Brockway</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/byrnedale">Byrnedale</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/canton">Canton</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/carlisle">Carlisle</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/chambersburg">Chambersburg</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/clarence">Clarence</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/cocolamus">Cocolamus</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/cogan-station">Cogan Station</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/coudersport">Coudersport</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/cumbola">Cumbola</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/dagus-mines">Dagus Mines</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/donaldson">Donaldson</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/drifting">Drifting</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/driftwood">Driftwood</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/dubois">Dubois</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/elliottsburg">Elliottsburg</a></li>
+                  </ul>
+        <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Pennsylvania (EM-LE)</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/emporium">Emporium</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/falls-creek">Falls Creek</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/force">Force</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/forksville">Forksville</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/frenchville">Frenchville</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/genesee">Genesee</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/granville">Granville</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/grassflat">Grassflat</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/hillsgrove">Hillsgrove</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/howard">Howard</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/ickesburg">Ickesburg</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/johnsonburg">Johnsonburg</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/julian">Julian</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/karthaus">Karthaus</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/kersey">Kersey</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/kylertown">Kylertown</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/landisburg">Landisburg</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/lanse">Lanse</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/lecontes-mills">Lecontes Mills</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/lewistown">Lewistown</a></li>
+        </ul>
+        <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Pennsylvania (LI-NE)</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/liverpool">Liverpool</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/loysville">Loysville</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/lurgan">Lurgan</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/mattawana">Mattawana</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/mcalisterville">McAlisterville</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/mcclure">McClure</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/mcveytown">McVeytown</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/mexico">Mexico</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/mifflin">Mifflin</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/mifflintown">Mifflintown</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/millerstown">Millerstown</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/mills">Mills</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/mingoville">Mingoville</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/montoursville">Montoursville</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/morrisdale">Morrisdale</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/moshannon">Moshannon</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/mount-pleasant-mills">Mount Pleasant Mills</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/muncy">Muncy</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/munson">Munson</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/new-bloomfield">New Bloomfield</a></li>
+                </ul>
+        <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Pennsylvania (NE-RO)</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/newburg">Newburg</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/newport">Newport</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/newville">Newville</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/oakland-mills">Oakland Mills</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/orrstown">Orrstown</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/penfield">Penfield</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/pleasant-hall">Pleasant Hall</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/port-allegany">Port Allegany</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/port-carbon">Port Carbon</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/port-matilda">Port Matilda</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/port-royal">Port Royal</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/port-trevorton">Port Trevorton</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/pottsville">Pottsville</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/ralston">Ralston</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/reynoldsville">Reynoldsville</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/richfield">Richfield</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/ridgway">Ridgway</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/roaring-branch">Roaring Branch</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/roulette">Roulette</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/roxbury">Roxbury</a></li>
+                </ul>
+        <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Pennsylvania (S-Z)</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/shinglehouse">Shinglehouse</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/shippensburg">Shippensburg</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/snow-shoe">Snow Shoe</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/saint-marys">Saint Marys</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/thompsontown">Thompsontown</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/treasure-lake">Treasure Lake</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/tremont">Tremont</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/trout-run">Trout Run</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/turtle-point">Turtle Point</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/ulysses">Ulysses</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/upper-strasburg">Upper Strasburg</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/wallaceton">Wallaceton</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/walnut-bottom">Walnut Bottom</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/weedville">Weedville</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/west-decatur">West Decatur</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/westfield">Westfield</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/wilcox">Wilcox</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/williamsport">Williamsport</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/winburne">Winburne</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/zion">Zion</a></li>
+                </ul>
+        </ul>
+              </li>
+        
+              <!-- Dropdown Menu 4 -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Service States TN-WV
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Tennessee</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/tennessee/puryear">Puryear</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/tennessee/sneedville">Sneedville</a></li>
+                  </ul>
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Texas (B-G)</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/texas/beckville">Beckville</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/texas/buffalo">Buffalo</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/texas/burleson">Burleson</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/texas/cameron">Cameron</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/texas/canton">Canton</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/texas/cleburne">Cleburne</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/texas/crowley">Crowley</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/texas/easton">Easton</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/texas/elkhart">Elkhart</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/texas/franklin">Franklin</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/texas/graham">Graham</a></li>
+                  </ul>
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Texas (H-W)</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/texas/henderson">Henderson</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/texas/jewett">Jewett</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/texas/kilgore">Kilgore</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/texas/longview">Longview</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/texas/myrtle-springs">Myrtle Springs</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/texas/palestine">Palestine</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/texas/tatum">Tatum</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/texas/westlake">Westlake</a></li>
+                  </ul>
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Virginia</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/virginia/axton">Axton</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/virginia/cascade">Cascade</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/virginia/chatham">Chatham</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/virginia/danville">Danville</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/virginia/dry-fork">Dry Fork</a></li>
+                  </ul>
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Washington</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/washington/friday-harbor">Friday Harbor</a></li>
+                  </ul>
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">West Virginia</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/west-virginia/blacksville">Blacksville</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/west-virginia/burton">Burton</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/west-virginia/cameron">Cameron</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/west-virginia/fairview">Fairview</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/west-virginia/hundred">Hundred</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/west-virginia/littleton">Littleton</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/west-virginia/pentress">Pentress</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/west-virginia/wana">Wana</a></li>
+                  </ul>
+                </ul>
+              </li>
+        
+              
+        <!-- Dropdown Menu 6 -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Fiber Construction Areas          </a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">North Carolina</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/north-carolina/bryson-city/phase-1-fiber">Bryson City</a></li>
+                  </ul>
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Pennsylvania</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/grassflat/phase-1-fiber">Grassflat</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/kylertown/phase-1-fiber">Kylertown</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/lanse/phase-1-fiber">Lanse</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/winburne/phase-1-fiber">Winburne</a></li>
+                  </ul>
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Texas</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/texas/graham/phase-1-fiber">Graham</a></li>
+                  </ul>
+                </ul>
+              </li>
+        <!-- Dropdown Menu 7 -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Local Offices by State          </a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">California</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/california/borrego-springs/local-office">Borrego Springs</a></li>
+                  </ul>
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Florida</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/florida/ocala/local-office">Ocala</a></li>
+                  </ul>
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Idaho</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/idaho/mountain-home/local-office">Mountain Home</a></li>
+                  </ul>
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Kansas</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/kansas/liberal/local-office">Liberal</a></li>
+                  </ul>
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">North Carolina</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/north-carolina/burnsville/local-office">Burnsville</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/north-carolina/waynesville/local-office">Waynesville</a></li>
+                  </ul>
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Pennsylvania</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/canton/local-office">Canton</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/coudersport/headquarters">Coudersport</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/dubois/local-office">Dubois</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/saint-marys/local-office">Saint Marys</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/shippensburg/local-office">Shippensburg</a></li>
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/pennsylvania/walnut-bottom/local-office">Walnut Bottom</a></li>
+                  </ul>
+                  <li class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown">Texas</li>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://zitomedia.net/national/texas/palestine/local-office">Palestine</a></li>
+                  </ul>
+                </ul>
+              </li>
+            </ul>
+        
+
+
+
+
+          </nav>
+
+          <p>Do we service your town?</p>
+    <div class="container">
+        <form id="search-form" class="d-flex" role="search">
+            <input id="search-input" class="form-control me-2" type="search" placeholder="Enter your town" aria-label="Search">
+            <button id="search-button" class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Create a mapping of location names to URLs
+            const locationMap = {
+                // Existing locations
+                "bennet": "https://zitomedia.net/national/nebraska/bennet",
+                "blue springs": "https://zitomedia.net/national/nebraska/blue-springs",
+                "bruning": "https://zitomedia.net/national/nebraska/bruning",
+                "cass county": "https://zitomedia.net/national/nebraska/cass-county",
+                "ceresco": "https://zitomedia.net/national/nebraska/ceresco",
+                "clatonia": "https://zitomedia.net/national/nebraska/clatonia",
+                "clay center": "https://zitomedia.net/national/nebraska/clay-center",
+                "cook": "https://zitomedia.net/national/nebraska/cook",
+                "davenport": "https://zitomedia.net/national/nebraska/davenport",
+                "de witt": "https://zitomedia.net/national/nebraska/de-witt",
+                "deshler": "https://zitomedia.net/national/nebraska/deshler",
+                "dorchester": "https://zitomedia.net/national/nebraska/dorchester",
+                "eagle": "https://zitomedia.net/national/nebraska/eagle",
+                "edgar": "https://zitomedia.net/national/nebraska/edgar",
+                "elmwood": "https://zitomedia.net/national/nebraska/elmwood",
+                "exeter": "https://zitomedia.net/national/nebraska/exeter",
+                "fairfield": "https://zitomedia.net/national/nebraska/fairfield",
+                "fairmont": "https://zitomedia.net/national/nebraska/fairmont",
+                "friend": "https://zitomedia.net/national/nebraska/friend",
+                "geneva": "https://zitomedia.net/national/nebraska/geneva",
+                "hallam": "https://zitomedia.net/national/nebraska/hallam",
+                "harvard": "https://zitomedia.net/national/nebraska/harvard",
+                "hickman": "https://zitomedia.net/national/nebraska/hickman",
+                "johnson": "https://zitomedia.net/national/nebraska/johnson",
+                "malcolm": "https://zitomedia.net/national/nebraska/malcolm",
+                "mccool junction": "https://zitomedia.net/national/nebraska/mccool-junction",
+                "milford": "https://zitomedia.net/national/nebraska/milford",
+                "milligan": "https://zitomedia.net/national/nebraska/milligan",
+                "murray": "https://zitomedia.net/national/nebraska/murray",
+                "palmyra": "https://zitomedia.net/national/nebraska/palmyra",
+                "pleasantdale": "https://zitomedia.net/national/nebraska/pleasantdale",
+                "plymouth": "https://zitomedia.net/national/nebraska/plymouth",
+                "sutton": "https://zitomedia.net/national/nebraska/sutton",
+                "syracuse": "https://zitomedia.net/national/nebraska/syracuse",
+                "unadilla": "https://zitomedia.net/national/nebraska/unadilla",
+                "utica": "https://zitomedia.net/national/nebraska/utica",
+                "valparaiso": "https://zitomedia.net/national/nebraska/valparaiso",
+                "waco": "https://zitomedia.net/national/nebraska/waco",
+                "weeping water": "https://zitomedia.net/national/nebraska/weeping-water",
+                "wilber": "https://zitomedia.net/national/nebraska/wilber",
+                "wymore": "https://zitomedia.net/national/nebraska/wymore",
+                "elko": "https://zitomedia.net/national/nevada/elko",
+                "winnemucca": "https://zitomedia.net/national/nevada/winnemucca",
+                "genoa": "https://zitomedia.net/national/new-york/genoa",
+                "king ferry": "https://zitomedia.net/national/new-york/king-ferry",
+                "locke": "https://zitomedia.net/national/new-york/locke",
+                "moravia": "https://zitomedia.net/national/new-york/moravia",
+
+                // New North Carolina locations
+                "bakersville": "https://zitomedia.net/national/north-carolina/bakersville",
+                "bryson city": "https://zitomedia.net/national/north-carolina/bryson-city",
+                "burnsville": "https://zitomedia.net/national/north-carolina/burnsville",
+                "canton": "https://zitomedia.net/national/north-carolina/canton",
+                "clyde": "https://zitomedia.net/national/north-carolina/clyde",
+                "green mountain": "https://zitomedia.net/national/north-carolina/green-mountain",
+                "little switzerland": "https://zitomedia.net/national/north-carolina/little-switzerland",
+                "marion": "https://zitomedia.net/national/north-carolina/marion",
+                "mars hill": "https://zitomedia.net/national/north-carolina/mars-hill",
+                "micaville": "https://zitomedia.net/national/north-carolina/micaville",
+                "penland": "https://zitomedia.net/national/north-carolina/penland",
+                "robbinsville": "https://zitomedia.net/national/north-carolina/robbinsville",
+                "spruce pine": "https://zitomedia.net/national/north-carolina/spruce-pine",
+                "waynesville": "https://zitomedia.net/national/north-carolina/waynesville",
+                "whittier": "https://zitomedia.net/national/north-carolina/whittier",
+
+                // New Ohio locations
+                "ashtabula": "https://zitomedia.net/national/ohio/ashtabula",
+                "chardon": "https://zitomedia.net/national/ohio/chardon",
+                "conneaut": "https://zitomedia.net/national/ohio/conneaut",
+                "denmark": "https://zitomedia.net/national/ohio/denmark",
+                "dorset": "https://zitomedia.net/national/ohio/dorset",
+                "geneva": "https://zitomedia.net/national/ohio/geneva",
+                "huntsburg": "https://zitomedia.net/national/ohio/huntsburg",
+                "kingsville": "https://zitomedia.net/national/ohio/kingsville",
+                "madison": "https://zitomedia.net/national/ohio/madison",
+                "montville": "https://zitomedia.net/national/ohio/montville",
+                "pierpont": "https://zitomedia.net/national/ohio/pierpont",
+                "roaming shores": "https://zitomedia.net/national/ohio/roaming-shores",
+                "rock creek": "https://zitomedia.net/national/ohio/rock-creek",
+                "rome": "https://zitomedia.net/national/ohio/rome",
+                "thompson": "https://zitomedia.net/national/ohio/thompson",
+                "windsor": "https://zitomedia.net/national/ohio/windsor",
+
+                // New Pennsylvania locations
+                "alba": "https://zitomedia.net/national/pennsylvania/alba",
+                "austin": "https://zitomedia.net/national/pennsylvania/austin",
+                "bellefonte": "https://zitomedia.net/national/pennsylvania/bellefonte",
+                "belleville": "https://zitomedia.net/national/pennsylvania/belleville",
+                "brockway": "https://zitomedia.net/national/pennsylvania/brockway",
+                "byrnedale": "https://zitomedia.net/national/pennsylvania/byrnedale",
+                "carlisle": "https://zitomedia.net/national/pennsylvania/carlisle",
+                "coudersport":"https://zitomedia.net/national/pennsylvania/coudersport",
+                "cumbola": "https://zitomedia.net/national/pennsylvania/cumbola",
+                "dagus mines": "https://zitomedia.net/national/pennsylvania/dagus-mines",
+                "donaldson": "https://zitomedia.net/national/pennsylvania/donaldson",
+                "drifting": "https://zitomedia.net/national/pennsylvania/drifting",
+                "driftwood": "https://zitomedia.net/national/pennsylvania/driftwood",
+                "dubois": "https://zitomedia.net/national/pennsylvania/dubois",
+                "elliottsburg": "https://zitomedia.net/national/pennsylvania/elliottsburg",
+                "emporium": "https://zitomedia.net/national/pennsylvania/emporium",
+                "falls creek": "https://zitomedia.net/national/pennsylvania/falls-creek",
+                "force": "https://zitomedia.net/national/pennsylvania/force",
+                "forksville": "https://zitomedia.net/national/pennsylvania/forksville",
+                "frenchville": "https://zitomedia.net/national/pennsylvania/frenchville",
+                "genesee": "https://zitomedia.net/national/pennsylvania/genesee",
+                "granville": "https://zitomedia.net/national/pennsylvania/granville",
+                "grassflat": "https://zitomedia.net/national/pennsylvania/grassflat",
+                "hillsgrove": "https://zitomedia.net/national/pennsylvania/hillsgrove",
+                "howard": "https://zitomedia.net/national/pennsylvania/howard",
+                "ickesburg": "https://zitomedia.net/national/pennsylvania/ickesburg",
+                "johnsonburg": "https://zitomedia.net/national/pennsylvania/johnsonburg",
+                "julian": "https://zitomedia.net/national/pennsylvania/julian",
+                "karthaus": "https://zitomedia.net/national/pennsylvania/karthaus",
+                "kersey": "https://zitomedia.net/national/pennsylvania/kersey",
+                "kylertown": "https://zitomedia.net/national/pennsylvania/kylertown",
+                "landisburg": "https://zitomedia.net/national/pennsylvania/landisburg",
+                "lanse": "https://zitomedia.net/national/pennsylvania/lanse",
+                "lecontes mills": "https://zitomedia.net/national/pennsylvania/lecontes-mills",
+                "lewistown": "https://zitomedia.net/national/pennsylvania/lewistown",
+                "liverpool": "https://zitomedia.net/national/pennsylvania/liverpool",
+                "loysville": "https://zitomedia.net/national/pennsylvania/loysville",
+                "lurgan": "https://zitomedia.net/national/pennsylvania/lurgan",
+                "mattawana": "https://zitomedia.net/national/pennsylvania/mattawana",
+                "mcalisterville": "https://zitomedia.net/national/pennsylvania/mcalisterville",
+                "mcclure": "https://zitomedia.net/national/pennsylvania/mcclure",
+                "mcveytown": "https://zitomedia.net/national/pennsylvania/mcveytown",
+                "mexico": "https://zitomedia.net/national/pennsylvania/mexico",
+                "mifflin": "https://zitomedia.net/national/pennsylvania/mifflin",
+                "mifflintown": "https://zitomedia.net/national/pennsylvania/mifflintown",
+                "millerstown": "https://zitomedia.net/national/pennsylvania/millerstown",
+                "mills": "https://zitomedia.net/national/pennsylvania/mills",
+                "mingoville": "https://zitomedia.net/national/pennsylvania/mingoville",
+                "montoursville": "https://zitomedia.net/national/pennsylvania/montoursville",
+                "morrisdale": "https://zitomedia.net/national/pennsylvania/morrisdale",
+                "moshannon": "https://zitomedia.net/national/pennsylvania/moshannon",
+                "mount pleasant mills": "https://zitomedia.net/national/pennsylvania/mount-pleasant-mills",
+                "muncy": "https://zitomedia.net/national/pennsylvania/muncy",
+                "munson": "https://zitomedia.net/national/pennsylvania/munson",
+                "new bloomfield": "https://zitomedia.net/national/pennsylvania/new-bloomfield",
+                "newburg": "https://zitomedia.net/national/pennsylvania/newburg",
+                "newport": "https://zitomedia.net/national/pennsylvania/newport",
+                "newville": "https://zitomedia.net/national/pennsylvania/newville",
+                "oakland mills": "https://zitomedia.net/national/pennsylvania/oakland-mills",
+                "orrstown": "https://zitomedia.net/national/pennsylvania/orrstown",
+                "penfield": "https://zitomedia.net/national/pennsylvania/penfield",
+                "pleasant hall": "https://zitomedia.net/national/pennsylvania/pleasant-hall",
+                "port allegany": "https://zitomedia.net/national/pennsylvania/port-allegany",
+                "port carbon": "https://zitomedia.net/national/pennsylvania/port-carbon",
+                "port matilda": "https://zitomedia.net/national/pennsylvania/port-matilda",
+                "port royal": "https://zitomedia.net/national/pennsylvania/port-royal",
+                "port trevorton": "https://zitomedia.net/national/pennsylvania/port-trevorton",
+                "pottsville": "https://zitomedia.net/national/pennsylvania/pottsville",
+                "ralston": "https://zitomedia.net/national/pennsylvania/ralston",
+                "reynoldsville": "https://zitomedia.net/national/pennsylvania/reynoldsville",
+                "richfield": "https://zitomedia.net/national/pennsylvania/richfield",
+                "ridgway": "https://zitomedia.net/national/pennsylvania/ridgway",
+                "roaring branch": "https://zitomedia.net/national/pennsylvania/roaring-branch",
+                "roulette": "https://zitomedia.net/national/pennsylvania/roulette",
+                "roxbury": "https://zitomedia.net/national/pennsylvania/roxbury",
+                "shinglehouse": "https://zitomedia.net/national/pennsylvania/shinglehouse",
+                "shippensburg": "https://zitomedia.net/national/pennsylvania/shippensburg",
+                "snow shoe": "https://zitomedia.net/national/pennsylvania/snow-shoe",
+                "saint marys": "https://zitomedia.net/national/pennsylvania/saint-marys",
+                "thompsontown": "https://zitomedia.net/national/pennsylvania/thompsontown",
+                "treasure lake": "https://zitomedia.net/national/pennsylvania/treasure-lake",
+                "tremont": "https://zitomedia.net/national/pennsylvania/tremont",
+                "trout run": "https://zitomedia.net/national/pennsylvania/trout-run",
+                "turtle point": "https://zitomedia.net/national/pennsylvania/turtle-point",
+                "ulysses": "https://zitomedia.net/national/pennsylvania/ulysses",
+                "upper strasburg": "https://zitomedia.net/national/pennsylvania/upper-strasburg",
+                "wallaceton": "https://zitomedia.net/national/pennsylvania/wallaceton",
+                "walnut bottom": "https://zitomedia.net/national/pennsylvania/walnut-bottom",
+                "weedville": "https://zitomedia.net/national/pennsylvania/weedville",
+                "west decatur": "https://zitomedia.net/national/pennsylvania/west-decatur",
+                "westfield": "https://zitomedia.net/national/pennsylvania/westfield",
+                "wilcox": "https://zitomedia.net/national/pennsylvania/wilcox",
+                "williamsport": "https://zitomedia.net/national/pennsylvania/williamsport",
+                "winburne": "https://zitomedia.net/national/pennsylvania/winburne",
+                "zion": "https://zitomedia.net/national/pennsylvania/zion"
+            };
+
+            // Handle form submission
+            $("#search-form").on("submit", function(event) {
+                event.preventDefault(); // Prevent the form from submitting normally
+
+                var searchValue = $("#search-input").val().toLowerCase().trim();
+                console.log("Search Value:", searchValue); // Debugging output
+
+                if (locationMap.hasOwnProperty(searchValue)) {
+                    window.location.href = locationMap[searchValue];
+                } else {
+                    alert("Location not found. Please try a different search.");
+                }
+            });
+        });
+    </script>
+
+
+</div>
+</div>
+
+
+
+
+<h1>Blazing-Fast Internet is Available!</h1>
+<div class="content">
+  <blockquote style="background: #00193d; display: table; margin: 10px auto; color: #000000!important; border: none; border-radius: 5px; text-align: center; font-size: 18px !important; padding: 10px 20px; line-height: 1.5em; max-width: 2000px;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+      <div style="flex: 1 1 50%; padding: 1px; box-sizing: border-box;">
+        <img src="https://www.zitomedia.net/wp-content/uploads/2024/08/Untitled-design-61.png" width="940" height="748" usemap="#map">
+
+        <map name="map">
+          <area shape="rect" coords="776,259,826,309" href="http://www.zitomedia.net/national/new-york" alt="New York">
+          <area shape="rect" coords="736,301,786,351" href="http://www.zitomedia.net/national/pennsylvania" alt="Pennsylvania">
+          <area shape="rect" coords="699,352,749,402" href="http://www.zitomedia.net/national/west-virginia" alt="West Virginia">
+          <area shape="rect" coords="724,373,774,423" href="http://www.zitomedia.net/national/virginia" alt="Virginia">
+          <area shape="rect" coords="723,416,773,466" href="http://www.zitomedia.net/national/north-carolina" alt="North Carolina">
+          <area shape="rect" coords="629,377,679,427" href="http://www.zitomedia.net/national/kentucky" alt="Kentucky">
+          <area shape="rect" coords="598,410,648,460" href="http://www.zitomedia.net/national/tennessee" alt="Tennessee">
+          <area shape="rect" coords="672,320,722,370" href="http://www.zitomedia.net/national/ohio" alt="Ohio">
+          <area shape="rect" coords="652,480,702,530" href="http://www.zitomedia.net/national/georgia" alt="Georgia">
+          <area shape="rect" coords="676,561,726,611" href="http://www.zitomedia.net/national/florida" alt="Florida">
+          <area shape="rect" coords="508,515,558,565" href="http://www.zitomedia.net/national/louisiana" alt="Louisiana">
+          <area shape="rect" coords="382,489,475,547" href="http://www.zitomedia.net/national/texas" alt="Texas">
+          <area shape="rect" coords="497,359,547,409" href="http://www.zitomedia.net/national/missouri" alt="Missouri">
+          <area shape="rect" coords="485,168,535,218" href="http://www.zitomedia.net/national/minnesota" alt="Minnesota">
+          <area shape="rect" coords="407,296,457,346" href="http://www.zitomedia.net/national/nebraska" alt="Nebraska">
+          <area shape="rect" coords="273,325,323,365" href="http://www.zitomedia.net/national/colorado" alt="Colorado">
+          <area shape="rect" coords="384,363,434,413" href="http://www.zitomedia.net/national/kansas" alt="Kansas">
+          <area shape="rect" coords="140,237,190,287" href="http://www.zitomedia.net/national/idaho" alt="Idaho">
+          <area shape="rect" coords="107,342,157,392" href="http://www.zitomedia.net/national/nevada" alt="Nevada">
+          <area shape="rect" coords="54,394,113,451" href="http://www.zitomedia.net/national/california" alt="California">
+          <area shape="rect" coords="48,150,109,215" href="http://www.zitomedia.net/national/washington" alt="Washington">
+          <area shape="rect" coords="548,321,605,374" href="http://www.zitomedia.net/national/illinois" alt="Illinois">
+        </map>
+
+        <hr>
+        <h3>Connecting America with High-Speed Internet</h3><hr>
+        <p>At Zito Media, we're committed to revolutionizing internet access across the nation. With our extensive network and cutting-edge technology, we provide high-speed internet solutions that meet the needs of diverse communities. Our mission is to deliver reliable, fast, and affordable internet services to both urban and rural areas.</p>
+      </div>
+      <div style="width: 1px; background-color: #00588f; height: 100%;"></div>
+      <div style="flex: 1 1 100%; padding: 10px; box-sizing: border-box;">
+        <h3>Our Nationwide Infrastructure</h3><hr>
+        <p>Our investment in state-of-the-art infrastructure ensures that we can provide exceptional internet connectivity across a broad range of locations. By continuously expanding and upgrading our network, we're making it possible for more people to enjoy the benefits of high-speed internet, regardless of their geographic location.</p>
+        <h3>Dedicated Customer Support and Service</h3><hr>
+        <p>At Zito Media, customer satisfaction is our top priority. Our nationwide team of experts is dedicated to providing exceptional customer service and technical support. Whether you’re in a bustling city or a remote town, we’re here to ensure you have a seamless and enjoyable internet experience.</p>
+      </div>
+    </div>
+  </blockquote>
+</div>
+<hr>
+
+
+
+</body>
+</html>
